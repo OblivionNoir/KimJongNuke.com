@@ -1,3 +1,9 @@
+document.addEventListener('click', function playanthem(){
+    var anthem = new Audio("anthem.mp3");
+    anthem.play()
+    anthem.loop = true;
+    document.removeEventListener('click', playanthem);
+})    
 
 
 document.addEventListener("click", function boom(){
@@ -12,9 +18,12 @@ document.addEventListener("click", function boom(){
     nuke.style.position = 'absolute';
     nuke.style.left = x + 'px';
     nuke.style.top = y + 'px';
+    nukecounter()
 }
 
-
-
-
 })
+var nuke_count =0;
+function nukecounter(){
+    nuke_count++;
+    document.getElementById("nuke_counter").innerHTML = "Nukes Dropped:" + nuke_count;
+}
